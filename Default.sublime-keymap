@@ -1,0 +1,14 @@
+[
+    {    
+        "keys": ["ctrl+shift+c"], "command": "competitive_programming_parser_file",
+        "args": { "action": "contest"} 
+    },
+    {    
+        "keys": ["ctrl+shift+x"], "command": "competitive_programming_parser_file",
+        "args": { "action": "testcase"} 
+    },
+    {    
+        "keys": ["ctrl+shift+y"], "command": "competitive_programming_parser_file",
+        "args": { "action": "problem"} 
+    },
+]

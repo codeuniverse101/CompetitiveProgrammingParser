@@ -1,0 +1,160 @@
+{
+    "TESTS_FILE_SUFFIX" : "__tests",
+    
+    /*
+        Change lang_extension as per the language
+        For Java, set `lang_extension` = ".java"
+        For Python, set `lang_extension` = ".py"
+        For C, set `lang_extension` = ".c"
+        For Javascript, set `lang_extension` = ".js"
+    */
+    "lang_extension": ".cpp",
+    
+    // When true, `default` directory is used for all websites
+    // Otherwise directory for the particular website is used
+    "use_default_directory": true,
+    
+    // When true, the newly created folder will open in a new sublime window
+    "open_in_new_window": false,
+    
+    "directory" : {
+        
+        // Set the default folder for newly created files and folders 
+        "default": "",
+        
+        "CodeChef" : "",
+        
+        "Codeforces" : "",
+        
+        "AtCoder" : "",
+        
+        "A2 Online Judge" : "",
+
+        "ACMP" : "",
+
+        "AcWing" : "",
+
+        "Aizu Online Judge" : "",
+
+        "Anarchy Golf" : "",
+
+        "AtCoder" : "",
+
+        "Baekjoon Online Judge" : "",
+
+        "beecrowd" : "",
+
+        "Bloomberg CodeCon" : "",
+
+        "BUCTOJ" : "",
+
+        "CodeChef" : "",
+
+        "CodeDrills" : "",
+
+        "Codeforces" : "",
+
+        "CodeMarshal" : "",
+
+        "COJ" : "",
+
+        "Contest Hunter" : "",
+
+        "CS Academy" : "",
+
+        "CSES" : "",
+
+        "CSU-ACM Online Judge" : "",
+
+        "DevSkill" : "",
+
+        "DMOJ" : "",
+
+        "Eolymp" : "",
+
+        "ECNU Online Judge" : "",
+
+        "Facebook Coding Competitions" : "",
+
+        "FZU Online Judge" : "",
+
+        "Google Coding Competitions" : "",
+
+        "HackerEarth" : "",
+
+        "HackerRank" : "",
+
+        "HDOJ" : "",
+
+        "HIT Online Judge" : "",
+
+        "hihoCoder" : "",
+
+        "Hrbust Online Judge" : "",
+
+        "Hydro" : "",
+
+        "ICPC Live Archive" : "",
+
+        "Jutge" : "",
+
+        "Kattis" : "",
+
+        "Library Checker" : "",
+
+        "LibreOJ" : "",
+
+        "LightOJ" : "",
+
+        "Luogu" : "",
+
+        "mrJudge" : "",
+
+        "MSK Informatics" : "",
+
+        "Neps Academy" : "",
+
+        "NOJ" : "",
+
+        "NowCoder" : "",
+
+        "NYTD Online Judge" : "",
+
+        "omegaUp" : "",
+
+        "Panda Online Judge" : "",
+
+        "PEG Judge" : "",
+
+        "POJ" : "",
+
+        "QDUOJ" : "",
+
+        "SPOJ" : "",
+
+        "SSOIER" : "",
+
+        "Timus" : "",
+
+        "TLX" : "",
+
+        "Toph" : "",
+
+        "UOJ" : "",
+
+        "USACO" : "",
+
+        "USACO Training" : "",
+
+        "UVa Online Judge" : "",
+
+        "Virtual Judge" : "",
+
+        "Yandex" : "",
+
+        "XXM" : "",
+
+        "yukicoder": "",
+
+    }
+}

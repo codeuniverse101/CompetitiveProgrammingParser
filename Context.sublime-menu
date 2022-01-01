@@ -1,0 +1,23 @@
+[
+	{
+		"caption": "Competitive Programming Parser",
+        "children":
+		[
+			{
+		        "caption": "Parse Contest",
+		        "command": "competitive_programming_parser_file",
+		        "args": {"action": "contest"}
+		    }, 
+		    {
+		        "caption": "Parse Testcases",
+		        "command": "competitive_programming_parser_file",
+		        "args": {"action": "testcase"} 
+		    },
+		    {
+		        "caption": "Parse Problem",
+		        "command": "competitive_programming_parser_file",
+		        "args": {"action": "problem"}
+		    },
+		]
+	}
+]
