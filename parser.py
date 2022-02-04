@@ -5,7 +5,7 @@ import platform, os, sys, time
 
 TESTS_FILE_SUFFIX = ''
 totalProblems, problems_parsed, successful_problems = 1, 0, 0
-settings = None
+settings, user_settings = None, None
 contest_name, contest_dir, working_dir, error, parse_in_view_file, view_file_name, sep = None, None, None, False, False, None, False
 problems = []
 
@@ -35,14 +35,21 @@ def close_panel():
         print('closed console')
     print('------------------------------END------------------------------')
     
+def GetSettings(key):
+    global settings, user_settings
+    if user_settings.get(key) != None:
+        return user_settings.get(key)
+    return settings.get(key)
+    
 
 def update_settings():
-    global settings, TESTS_FILE_SUFFIX
+    global settings, user_settings, TESTS_FILE_SUFFIX
     settings = sublime.load_settings('CompetitiveProgrammingParser ({os}).sublime-settings'.format(
         os={ 'windows': 'Windows', 'linux': 'Linux', 'osx': 'OSX' }[sublime.platform().lower()])
     )
-    if settings.get('TESTS_FILE_SUFFIX') != None:
-        TESTS_FILE_SUFFIX = settings.get('TESTS_FILE_SUFFIX')
+    user_settings = sublime.load_settings('CompetitiveProgrammingParser.sublime-settings')
+    if GetSettings('TESTS_FILE_SUFFIX') != None:
+        TESTS_FILE_SUFFIX = GetSettings('TESTS_FILE_SUFFIX')
     else:
         raise Exception('TESTS_FILE_SUFFIX not found in settings file')
         
@@ -52,12 +59,12 @@ def fetch_directory(oj, action):
     
     if contest_dir == None: # implies that command wasn't invoked from the sidebar
         key = oj
-        if settings.get('use_default_directory'):
+        if GetSettings('use_default_directory'):
             key = 'default'
-        if key not in settings.get('directory').keys() or settings.get('directory')[key] == '':
+        if key not in GetSettings('directory').keys() or GetSettings('directory')[key] == '':
             error = True
             raise Exception(key + ' directory not set. Please update your CompetitiveProgrammingParser settings')
-        contest_dir = settings.get('directory')[key]
+        contest_dir = GetSettings('directory')[key]
     if not os.path.exists(contest_dir):
         os.mkdir(contest_dir)
     working_dir = contest_dir
@@ -70,14 +77,14 @@ def fetch_directory(oj, action):
             error = True
             raise Exception(str(e) + '\nPlease update your CompetitiveProgrammingParser settings.')
     
-    if settings.get('open_in_new_window') and action == 'contest':
+    if GetSettings('open_in_new_window') and action == 'contest':
         os.system('subl -n \"' + working_dir + '\"')
     else:
         os.system('subl -a \"' + working_dir + '\"')
 
 # create file and testcases
 def parse_testcases(tests, problem, action):
-    filename = problem + settings.get('lang_extension')
+    filename = problem + GetSettings('lang_extension')
     if parse_in_view_file:
         filename = view_file_name
     filename = os.path.join(working_dir, filename)
@@ -196,7 +203,7 @@ class CompetitiveProgrammingParserFileCommand(sublime_plugin.TextCommand):
                 parse_in_view_file = True
                 view_file_name = self.view.file_name()
                 
-            if settings.get('lang_extension') == None:
+            if GetSettings('lang_extension') == None:
                 error = True
                 raise Exception('Language not set. Update your CompetitiveProgrammingParser settings.')
             
@@ -212,7 +219,7 @@ class CompetitiveProgrammingParserSidebarCommand(sublime_plugin.WindowCommand):
         global contest_dir, error
         contest_dir = dirs[0]
         try:
-            if settings.get('lang_extension') == None:
+            if GetSettings('lang_extension') == None:
                 error = True
                 raise Exception('language extension not set. Update your CompetitiveProgrammingParser settings.')
             _thread.start_new_thread(CompetitiveCompanionServer.startServer, (action,))
