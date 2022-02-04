@@ -113,7 +113,7 @@ def get_problem_name(tests, oj):
         show_msg('Contest: ' + contest_name)
     if oj == "CodeChef":
         problem = tests["url"].split('/')[-1]
-    elif oj == "Codeforces":
+    elif oj == "Codeforces" or oj == "Yandex":
         problem = tests["name"].split('.')[0]
     elif oj == "AtCoder":
         problem = tests["name"].split(' ')[0]
