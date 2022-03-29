@@ -124,6 +124,7 @@ def get_problem_name(tests, oj):
         problem = tests["name"].split('.')[0]
     elif oj == "AtCoder":
         problem = tests["name"].split(' ')[0]
+    problem = problem.replace(" ", "_")
     return problem
 
 def handle(tests, action):
