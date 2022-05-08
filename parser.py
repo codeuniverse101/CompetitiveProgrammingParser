@@ -52,6 +52,7 @@ def update_settings():
         TESTS_FILE_SUFFIX = GetSettings('TESTS_FILE_SUFFIX')
     else:
         raise Exception('TESTS_FILE_SUFFIX not found in settings file')
+    print("CompetitiveProgrammingParser Settings loaded successfully")
         
 # fetch current and working directories
 def fetch_directory(oj, action):
