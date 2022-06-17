@@ -1,4 +1,4 @@
-# Competitve Programming Parser for Sublime Text 3
+# Competitve Programming Parser for Sublime Text
 
 This is a Sublime Text package for parsing problem test-cases from various online judges. You can then run your solution against the testcases with the help of [CppFastOlympicCoding](https://packagecontrol.io/packages/CppFastOlympicCoding). The list of supported websites can be found [here](https://github.com/jmerle/competitive-companion#supported-websites).
 
