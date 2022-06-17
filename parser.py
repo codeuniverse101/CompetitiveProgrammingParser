@@ -57,15 +57,12 @@ def update_settings():
 # fetch current and working directories
 def fetch_directory(oj, action):
     global contest_name, contest_dir, working_dir, error
-    
     if contest_dir == None: # implies that command wasn't invoked from the sidebar
-        key = oj
-        if GetSettings('use_default_directory'):
-            key = 'default'
+        key = 'default' if GetSettings('use_default_directory') else oj
         if key not in GetSettings('directory').keys() or GetSettings('directory')[key] == '':
-            error = True
-            raise Exception(key + ' directory not set. Please update your CompetitiveProgrammingParser settings')
-        contest_dir = GetSettings('directory')[key]
+            contest_dir = os.path.dirname(__file__)
+        else:
+            contest_dir = GetSettings('directory')[key]
     if not os.path.exists(contest_dir):
         os.mkdir(contest_dir)
     working_dir = contest_dir
