@@ -23,10 +23,10 @@ Competitive Programming Parser can:
 
 1.
     -   For parsing the test-cases for a particular file: Right click anywhere in the file and select `CompetitveProgammingParser -> Parse Testcases`.
-    Key Binding: <kbd>ctrl+shift+x</kbd>
+    Key Binding: <kbd>ctrl+shift+x</kbd>  
     -  For parsing a problem: Right click anywhere in the Sublime Text editor and select `CompetitveProgammingParser -> Parse Problem`.
-    Key Binding: <kbd>ctrl+shift+y</kbd>
+    Key Binding: <kbd>ctrl+shift+y</kbd>   
     -  For parsing a contest: Right click anywhere in the Sublime Text editor and select `CompetitveProgammingParser -> Parse Contest`.
-    Key Binding: <kbd>ctrl+shift+c</kbd>
-2. In the browser, navigate to the problem page and click on the competitive-companion extension's `green plus icon`.
-3. Use [CppFastOlympicCoding](https://packagecontrol.io/packages/CppFastOlympicCoding) to run the solution against the parsed testcases.
+    Key Binding: <kbd>ctrl+shift+c</kbd>  
+2. In the browser, navigate to the problem page and click on the competitive-companion extension's `green plus icon`.  
+3. Use [CppFastOlympicCoding](https://packagecontrol.io/packages/CppFastOlympicCoding) to run the solution against the parsed testcases.  
