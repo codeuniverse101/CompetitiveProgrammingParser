@@ -30,3 +30,7 @@ Competitive Programming Parser can:
     Key Binding: <kbd>ctrl+shift+c</kbd>  
 2. In the browser, navigate to the problem page and click on the competitive-companion extension's `green plus icon`.  
 3. Use [CppFastOlympicCoding](https://packagecontrol.io/packages/CppFastOlympicCoding) to run the solution against the parsed testcases.  
+
+<u><b>Some Common Pitfalls</b></u>
+
+-   Windows users should make sure that ```tests_file_suffix``` is set to same value in the settings file of our package and [CppFastOlympicCoding](https://packagecontrol.io/packages/CppFastOlympicCoding). In [CppFastOlympicCoding](https://packagecontrol.io/packages/CppFastOlympicCoding), ```tests_file_suffix``` is by default set to ```:tests```. The problem with this is that ```:``` is not allowed in filename on windows. Fix is to override it to ```__tests```(which is also the default value of ```tests_file_suffix``` in our package.) in the user settings file of [CppFastOlympicCoding](https://packagecontrol.io/packages/CppFastOlympicCoding).  
