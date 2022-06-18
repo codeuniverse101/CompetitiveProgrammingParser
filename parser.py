@@ -3,7 +3,7 @@ from http.server import BaseHTTPRequestHandler, HTTPServer
 import json, _thread, threading
 import platform, os, sys, time
 
-TESTS_FILE_SUFFIX = ''
+tests_file_suffix = ''
 totalProblems, problems_parsed, successful_problems = 1, 0, 0
 settings, user_settings = None, None
 contest_name, contest_dir, working_dir, error, parse_in_view_file, view_file_name, sep = None, None, None, False, False, None, False
@@ -43,15 +43,15 @@ def GetSettings(key):
     
 
 def update_settings():
-    global settings, user_settings, TESTS_FILE_SUFFIX
+    global settings, user_settings, tests_file_suffix
     settings = sublime.load_settings('CompetitiveProgrammingParser ({os}).sublime-settings'.format(
         os={ 'windows': 'Windows', 'linux': 'Linux', 'osx': 'OSX' }[sublime.platform().lower()])
     )
     user_settings = sublime.load_settings('CompetitiveProgrammingParser.sublime-settings')
-    if GetSettings('TESTS_FILE_SUFFIX') != None:
-        TESTS_FILE_SUFFIX = GetSettings('TESTS_FILE_SUFFIX')
+    if GetSettings('tests_file_suffix') != None:
+        tests_file_suffix = GetSettings('tests_file_suffix')
     else:
-        raise Exception('TESTS_FILE_SUFFIX not found in settings file')
+        raise Exception('tests_file_suffix not found in settings file')
     print("CompetitiveProgrammingParser Settings loaded successfully")
         
 # fetch current and working directories
@@ -99,7 +99,7 @@ def parse_testcases(tests, problem, action):
         }
         testcases.append(testcase)
     
-    with open(filename + TESTS_FILE_SUFFIX, "w") as f:
+    with open(filename + tests_file_suffix, "w") as f:
         f.write(json.dumps(testcases))
     global successful_problems
     successful_problems += 1

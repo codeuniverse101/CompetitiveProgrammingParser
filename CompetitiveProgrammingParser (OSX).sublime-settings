@@ -1,5 +1,5 @@
 {
-    "TESTS_FILE_SUFFIX" : ":tests",
+    "tests_file_suffix" : ":tests",
     
     /*
         Change lang_extension as per the language

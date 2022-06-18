@@ -1,5 +1,5 @@
 {
-    "TESTS_FILE_SUFFIX" : "__tests",
+    "tests_file_suffix" : "__tests",
     
     /*
         Change lang_extension as per the language
@@ -21,12 +21,6 @@
         
         // Set the default folder for newly created files and folders 
         "default": "",
-        
-        "CodeChef" : "",
-        
-        "Codeforces" : "",
-        
-        "AtCoder" : "",
         
         "A2 Online Judge" : "",
 
